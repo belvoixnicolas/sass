@@ -1,0 +1,39 @@
+$ombre: 0px 10px 10px 3px lightgrey;
+$touteLaLargeur: 100%;
+$text_centrer: center;
+$bordure_lien: 1px solid white;
+
+nav {
+    background: #F62909;
+    min-height: 60px;
+    text-align: $text_centrer;
+    box-shadow: $ombre;
+
+    ul {
+        height: $touteLaLargeur;
+        display: flex;
+        flex-direction: row;
+        justify-content: $text_centrer;
+
+        li {
+            height: $touteLaLargeur;
+            transition: .5s;
+
+            &:hover {
+                background: black;
+            }
+
+            a {
+                border-left: $bordure_lien;
+                border-right: $bordure_lien;
+                display: inline-block;
+                height: 34px;
+                padding: 13px 15px;
+                font-size: $tailleNav;
+                text-decoration: none;
+                color: white;
+                font-family: $police;
+            }
+        }
+    }
+}

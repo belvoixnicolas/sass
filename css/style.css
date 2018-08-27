@@ -1,213 +1,135 @@
-a, li, p, h1, h2, i, figcaption, span  {
-  font-family: 'trebuchet MS', 'Roboto', sans-serif;
-}
-
-/* header */
 header {
+  height: 50vh;
   background: #101126 url(../img/background.jpg) no-repeat;
   background-position: left bottom -100px;
   background-size: cover;
-  text-align: center;
-  padding: 6%;
-}
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; }
+  header h1, header p {
+    font-family: "trebuchet MS", "Roboto", sans-serif;
+    font-size: 60px;
+    text-align: center; }
+  header p {
+    font-size: 36px; }
 
-header h1 {
-  font-size: 3.15789474rem;
-}
-
-header p, section h2 {
-  font-size: 1.89473684rem;
-}
-
-/* nav */
 nav {
   background: #F62909;
   min-height: 60px;
   text-align: center;
-  box-shadow: 0px 10px 10px 3px lightgrey;
-}
+  box-shadow: 0px 10px 10px 3px lightgrey; }
+  nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    nav ul li {
+      height: 100%;
+      transition: .5s; }
+      nav ul li:hover {
+        background: black; }
+      nav ul li a {
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        display: inline-block;
+        height: 34px;
+        padding: 13px 15px;
+        font-size: 22px;
+        text-decoration: none;
+        color: white;
+        font-family: "trebuchet MS", "Roboto", sans-serif; }
 
-nav ul {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+section {
+  width: 980px;
+  margin: 5vh auto 0; }
+  section h2, section p {
+    font-family: "trebuchet MS", "Roboto", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    text-align: left; }
+    section h2 i, section p i {
+      margin-right: 15px; }
+  section p {
+    font-size: 16px;
+    margin: 2vh 0; }
+  section .galerie {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 20px;
+    justify-items: center; }
+    section .galerie img, section .galerie .image_form .form, .image_form section .galerie .form {
+      height: 150px;
+      width: 150px; }
+    section .galerie figcaption, section .galerie figcaption span {
+      font-family: "trebuchet MS", "Roboto", sans-serif;
+      font-size: 18px;
+      text-align: center;
+      text-align: left;
+      font-weight: bold; }
+      section .galerie figcaption span {
+        font-weight: normal; }
 
-nav li {
-  height: 100%;
-  transition: .5s;
-}
-
-nav li:hover {
-  background: black;
-}
-
-nav a {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  display: inline-block;
-  height: 34px;
-  padding: 13px 15px;
-  font-size: 1.15789474rem;
-  text-decoration: none;
-  color: white;
-}
-
-/* corps du site */
-main {
-  max-width: 980px;
-  margin: auto;
-}
-
-main h2 {
-  margin: 30px 0px;
-}
-
-h2 i {
-  margin-right: 15px;
-}
-
-section p, section span {
-  font-size: 0.84210526rem;
-  font-weight: normal;
-}
-
-/* Galerie */
-.galerie {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.galerie figure {
-  display: inline-block;
-  width: 150px;
-  margin: 15px;
-}
-
-figure img {
-  border-radius: 100%;
-  transition: .5s;
-}
-
-figure img:hover {
-  box-shadow: 1px 5px 10px 3px grey;
-}
-
-.galerie figcaption {
-  margin-top: 10px;
-  text-align: left;
-  font-size: 0.94736842rem;
-  font-weight: bold;
-}
-
-.galerie figcaption span {
-  color: grey;
-}
-
-/* map */
 iframe {
-  margin-top: 30px;
   width: 100%;
-  height: 300px;
-}
+  height: 30vh; }
 
-/* img et fom */
 .image_form {
-  margin-top: 30px;
-}
+  display: flex;
+  flex-wrap: nowrap; }
+  .image_form img, .image_form .form {
+    width: 50%; }
+  .image_form .form {
+    height: fit-content; }
+    .image_form .form form {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%; }
+      .image_form .form form div {
+        border: 1px solid grey;
+        border-radius: 10px;
+        margin-bottom: 10px; }
+        .image_form .form form div label {
+          height: 30px;
+          margin-left: 5px;
+          color: grey; }
+        .image_form .form form div .fa-comment {
+          position: relative;
+          top: -161px; }
+        .image_form .form form div input, .image_form .form form div textarea {
+          font-family: "trebuchet MS", "Roboto", sans-serif;
+          font-size: 16px;
+          text-align: center;
+          border: none;
+          height: 35px;
+          width: 400px;
+          color: grey;
+          text-align: left; }
+        .image_form .form form div textarea {
+          height: 180px; }
+      .image_form .form form .bouton {
+        font-family: "trebuchet MS", "Roboto", sans-serif;
+        font-size: 16px;
+        text-align: center;
+        width: 150px;
+        background-color: #750CD9;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0px 10px 20px 0px grey; }
 
-.image_form img {
-  display: inline-block;
-  width: 480px;
-}
-
-.form {
-  float: right;
-  text-align: center;
-}
-
-.champ {
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-bottom: 10px
-}
-
-.champ label {
-  height: 30px;
-  margin-left: 5px;
-}
-
-.champ input {
-  border: none;
-  height: 35px;
-  width: 400px;
-}
-
-.champ textarea {
-  border: none;
-  height: 180px;
-  width: 400px;
-}
-.fa-comment {
-  position: relative;
-  top: -165px;
-}
-
-.champ label {
-  color: grey;
-}
-
-.bouton {
-  width: 150px;
-  background-color: #750CD9;
-  color: white;
-  border-radius: 10px;
-  padding: 5px;
-  box-shadow: 0px 10px 20px 0px grey;
-}
-
-/* Footer */
 footer {
   background-color: #00008b;
   height: 70px;
   text-align: center;
   margin-top: 30px;
-  padding: 60px;
-}
+  padding: 60px; }
+  footer a {
+    font-family: "trebuchet MS", "Roboto", sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    margin: 0 3vw; }
 
-footer a {
-  color: #ffffff	;
-  font-size: 2.10526316rem;
-  margin: 0px 15px;
-}
-
-@media all and (max-width: 1024px) {
-  nav ul {
-    display: block;
-  }
-
-  nav a {
-    display: block;
-    border-top: 1px solid #ffffff	;
-    border-bottom: : 1px solid #ffffff	;
-    border-left: none;
-    border-right: none;
-  }
-
-  .image_form img {
-    display: none;
-  }
-
-  .form {
-    float: none;
-  }
-
-  .champ {
-    text-align: left;
-  }
-
-  main {
-    margin: 5%;
-  }
-}
+/*# sourceMappingURL=style.css.map */

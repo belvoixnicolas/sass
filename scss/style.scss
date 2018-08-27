@@ -1,0 +1,160 @@
+@mixin text($taille) {
+    font: {
+        family: $police;
+        size: $taille;
+    }
+    text-align: center;
+}
+
+$police: 'trebuchet MS', 'Roboto', sans-serif;
+$tailleTitre: 60px;
+$taillebase_soustitre: 36px;
+$tailleNav: 22px;
+$tailleText: 16px;
+$tailleNom: 18px; 
+
+header {
+    height: 50vh;
+    background: #101126 url(../img/background.jpg) no-repeat;
+    background-position: left bottom -100px;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    h1 {
+        @include text($tailleTitre);
+    }
+
+    p {
+        @extend h1;
+        font-size: $taillebase_soustitre;
+    }
+}
+
+@import '_menu';
+
+section {
+    width: 980px;
+    margin: 5vh auto 0;
+
+    h2 {
+        @include text($taillebase_soustitre);
+        text-align: left;
+
+        i{
+            margin-right: 15px;
+        }
+    }
+
+    p {
+        @extend h2;
+        font-size: $tailleText;
+        margin: 2vh 0;
+    }
+
+    .galerie {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-row-gap: 20px;
+        justify-items: center;
+
+        img {
+            height: 150px;
+            width: 150px;
+        }
+
+        figcaption {
+            @include text($tailleNom);
+            text-align: left;
+            font-weight: bold;
+
+            span {
+                @extend figcaption;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 30vh;
+}
+
+.image_form {
+    display: flex;
+    flex-wrap: nowrap;
+
+    img{
+        width: 50%;
+    }
+
+    .form {
+        @extend img;
+        height: fit-content;
+
+        form {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            div {
+                border: 1px solid grey;
+                border-radius: 10px;
+                margin-bottom: 10px;
+
+                label {
+                    height: 30px;
+                    margin-left: 5px;
+                    color: grey;
+                }
+
+                .fa-comment {
+                    position: relative;
+                    top: -161px;
+                }
+
+                input {
+                    @include text($tailleText);
+                    border: none;
+                    height: 35px;
+                    width: 400px;
+                    color: grey;
+                    text-align: left;
+                }
+
+                textarea {
+                    @extend input;
+                    height: 180px;
+                }
+            }
+
+            .bouton {
+                @include text($tailleText);
+                width: 150px;
+                background-color: #750CD9;
+                color: white;
+                border-radius: 10px;
+                padding: 5px;
+                box-shadow: 0px 10px 20px 0px grey;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #00008b;
+    height: 70px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 60px;
+
+    a {
+        @include text($tailleTitre);
+        color: white;
+        margin: 0 3vw;
+    }
+}
